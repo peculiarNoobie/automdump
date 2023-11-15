@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import pygetwindow as gw
 import pyautogui
 
