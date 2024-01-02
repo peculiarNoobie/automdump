@@ -50,7 +50,7 @@ class Save:
     
     def savetooltxt(self):
         """Saves the tools in a file called setup"""
-        with open("window", "w") as file:
+        with open("window.txt", "w") as file:
             for windowInfo in self.scrapeInfo.windows:
                 file.write(str(windowInfo).replace("\n", "\t") + "\n")
 
@@ -66,7 +66,7 @@ class Main:
     def readinfo(self):
         """This reads the file and fill up the dictionary with keys and values."""
         """***Note that the first window in the dictionary is the active widow which the user last clicked before the program run.***"""
-        with open("window", "r") as file:
+        with open("window.txt", "r") as file:
             lines = file.readlines()
             for line in lines:
                 information = {}
@@ -102,10 +102,3 @@ if __name__ == "__main__":
     Save()
     another_instance = Main()
     print(another_instance)
-
-#    title_to_query = "PH SOC Josh dashboard (TEST) - GMO GlobalSign JIRA - Google Chrome"
-#    info = window_manager.get_window_info(title_to_query)
-#    if info:
-#        print(f"Information for '{title_to_query}':\n{info}")
-#    else:
-#        print(f"Window with title '{title_to_query}' not found.")
